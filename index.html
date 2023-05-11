@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player App</title>
+    <!-- Load FontAwesome icons -->
+    <link rel="stylesheet" href="all.css" />
+
+    <!-- Load the custom CSS style file -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+    </div>
+
+    <!-- Use any element to open the sidenav -->
+    <span onclick="openNav()"><i class="fa fa-bars fa-2x"></i></span>
+
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+      <div class="player">
+        <div class="details">
+          <div class="track-art"></div>
+          <div class="track-name">Track Name</div>
+        </div>
+        <div class="buttons">
+          <div class="prev-track" onclick="prevTrack()">
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+          <div class="playpause-track" onclick="playAudio() ">
+            <i id="playpause" class="fa fa-play-circle fa-5x"></i>
+          </div>
+          <div class="next-track" onclick="nextTrack() ">
+            <i class="fa fa-step-forward fa-2x"></i>
+          </div>
+          <div class="load-track" onclick="loadTracks()">
+            <i class="fa fa-file-circle-plus fa-2x"></i>
+          </div>
+        </div>
+        <div class="slider_container">
+          <audio id="curr_audio" ontimeupdate="updateCurrentTime()"></audio>
+          <div class="current-time">00:00</div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            class="seek_slider"
+            onchange="seekTo()"
+          />
+          <div class="total-duration">00:00</div>
+        </div>
+        <div class="slider_container">
+          <i class="fa fa-volume-down"></i>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="99"
+            class="volume_slider"
+            onchange="setVolume()"
+          />
+          <i class="fa fa-volume-up"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load the main script for the player -->
+    <script src="all.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
