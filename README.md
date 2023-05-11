@@ -1,2 +1,2 @@
-# Music Stream Player App
+> # Music Player HTML App **(run on PC Browser)**
  
